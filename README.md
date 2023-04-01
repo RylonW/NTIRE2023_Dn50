@@ -2,12 +2,12 @@
 
 ## Team 05
 
-## How to test the baseline model?
+## How to test our model?
 
-1. `git clone https://github.com/ofsoundof/NTIRE2023_Dn50.git`
-2. Select the model you would like to test from [`run.sh`](./run.sh)
+1. `git clone https://github.com/RylonW/NTIRE2023_Dn50.git`
+2. Select our model with id : 5 [`run.sh`](./run.sh)
     ```bash
-    CUDA_VISIBLE_DEVICES=0 python test_demo.py --data_dir [path to your data dir] --save_dir [path to your save dir] --model_id 0
+    CUDA_VISIBLE_DEVICES=0 python test_demo.py --data_dir [path to your data dir] --save_dir [path to your save dir] --model_id 5
     ```
     - Be sure the change the directories `--data_dir` and `--save_dir`.
    
