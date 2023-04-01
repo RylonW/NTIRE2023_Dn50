@@ -1,5 +1,7 @@
 # [NTIRE 2023 Challenge on Image Denoising](https://cvlai.net/ntire/2023/) @ [CVPR 2023](https://cvpr2023.thecvf.com/)
 
+## Team 05
+
 ## How to test the baseline model?
 
 1. `git clone https://github.com/ofsoundof/NTIRE2023_Dn50.git`
