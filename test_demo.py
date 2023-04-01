@@ -15,21 +15,20 @@ def select_model(args, device):
     # Model ID is assigned according to the order of the submissions.
     # Different networks are trained with input range of either [0,1] or [0,255]. The range is determined manually.
     model_id = args.model_id
-    use_gpu = 1
     if model_id == 0:
-        # SGN test
-        from models import VDN
-        name, data_range = f"{model_id:02}_RFDN_baseline", 1.0
-        model_path = os.path.join('model_zoo', 'team05_model_state_50')
+        print('model 0')
+
+    elif model_id == 5:
+        from models.new_VDN import VDN
         model = VDN(3, dep_U=4, wf=64)
         checkpoint = torch.load('model_zoo/team05_model_state_50')
-
-        if use_gpu:
-            model = torch.nn.DataParallel(model).cuda()
-            model.load_state_dict(checkpoint)
-        else:
-            load_state_dict_cpu(model, checkpoint)
-
+        model = torch.nn.DataParallel(model).cuda()
+        model.load_state_dict(checkpoint)
+        name, data_range = f"{model_id:02}_VDN_team05", 1.0
+        model_path = os.path.join('model_zoo', 'team05_model_state_50')
+        
+        
+        
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
 
